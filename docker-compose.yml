@@ -1,0 +1,12 @@
+version: '3.7'
+
+services:
+   agent:
+     image: pvaillant/azure-pipelines-agent:latest
+     volumes:
+       - /var/run/docker.sock:/var/run/docker.sock
+     restart: always
+     environment:
+      AZP_URL: https://dev.azure.com/<your_organization>
+      AZP_TOKEN: <PAT token>
+      AZP_AGENT_NAME: <Agent name>
